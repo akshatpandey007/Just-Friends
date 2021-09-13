@@ -9,11 +9,11 @@ const {
  } = process.env;
 
 const db = mysql.createPool({
-    host : '127.0.0.1',
-    port : '3333',
-    user : 'root',
-    password : 'password',
-    database : 'justfriends'
+    host : HOST,
+    port : DB_PORT,
+    user : DB_USER,
+    password : DB_PASS,
+    database : DB
 })
 
 
