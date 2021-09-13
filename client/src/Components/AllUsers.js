@@ -5,7 +5,7 @@ import { SideUser } from './SideUser'
 
 export const AllUsers = () => {
 
-    const [allUsers, setallUsers] = useState(null) 
+    const [allUsers, setallUsers] = useState([])
 
     async function fethUser(){
         try{
