@@ -4,5 +4,6 @@ export const  api = {
     USER : "/login/user",
     LOGOUT  : "/logout",
     SIGNUP : "/signup",
-    ALLUSERS : "/getallusers"
+    ALLUSERS : "/getallusers",
+    POSTS : '/posts'
 }

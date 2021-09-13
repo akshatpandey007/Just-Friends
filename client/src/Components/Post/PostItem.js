@@ -7,8 +7,8 @@ export const PostItem = ({post}) => {
     return (
         <div className="card p-3 m-3" >
             <PostHeader title={post.title} DOC={post.DOC} />
-            <PostBody data={post.data} image={post.image} />
-            <PostFooter likes={post.likes} CommentCount={post.CommentCount} />
+            <PostBody data={post.data} />
+            <PostFooter likes={post.likes} />
         </div>
     )
 }

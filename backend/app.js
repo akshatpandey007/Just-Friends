@@ -15,6 +15,7 @@ import loginRoute from "./api/login.js"
 import logoutRoute from "./api/logout.js"
 import signupRoute from './api/signup.js'
 import allUsersRoute from './api/getallusers.js'
+import postRoute from './api/posts.js'
 
 
 
@@ -65,6 +66,7 @@ app.use("/signup",signupRoute)
 app.use("/login",loginRoute)
 app.use("/logout",logoutRoute)
 app.use("/getallusers",allUsersRoute)
+app.use("/posts",postRoute)
 
 const cpus = os.cpus()
 

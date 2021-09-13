@@ -1,35 +1,53 @@
-import React from 'react'
+import axios from 'axios';
+import React , {useEffect, useState} from 'react'
+import { api } from '../backendRoute';
 import { PostItem } from './Post/PostItem'
 
 export const Posts = () => {
 
-    let posts = [
-        {
-            title : "First Post",
-            data : "This is my post data",
-            image : null,
-            DOC : "23-32-23",
-            likes : ['rajat','sumit'],
-            comments : ['rajat-hi'],
-            CommentCount: 4,
-        },
-        {
-            title : "Second Post",
-            data : "This is my post data",
-            image : null,
-            DOC : "23-32-23",
-            likes : ['rajat','sumit'],
-            comments : ['rajat-hi'],
-            CommentCount: 4,
+    
+    const [posts, setposts] = useState([])
 
-        },
-         
-    ]
+    useEffect(() => {
+
+        (async function(){
+            let axiosConfig = {
+                headers: {
+                    'Content-Type': 'application/json;charset=UTF-8',
+                    "Access-Control-Allow-Origin": "*",
+                },
+                withCredentials : true
+              };
+              try{
+                
+                let response = await axios.get(api.HOST + api.POSTS, axiosConfig)
+                let pts = []
+                response.data.map(r => {
+                    let temp_post ={
+                        postId : r.postId,
+                        uid : r.uid,
+                        title : r.heading,
+                        data : r.content,
+                        likes : r.likes,
+                        DOC : r.creationDate
+                    }
+                    pts = [...pts,temp_post]
+                })
+                console.log("pts",pts)
+                setposts(pts)
+              }catch(err){
+
+              }
+        })();
+    }, [])
+
+
+    
 
     return (
         <div className="container" style={{width:'80%'}}>
             {posts.length===0 ? <p className="text-center text-muted">No new posts to display</p> : "" }
-            {posts.map(post => <PostItem post={post}/> )}
+            {posts && posts.map(post => <PostItem key={post.postId} post={post}/> )}
         </div>
     )
 }
