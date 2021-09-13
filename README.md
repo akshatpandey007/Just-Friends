@@ -135,7 +135,7 @@ A Social Media app with simple features built with ReactJS, NodeJS, ExpressJs an
   queueLimit: 100,              // The maximum number of connection requests the pool will queue before returning an error from getConnection. (Default: 0)
   host : '127.0.0.1',           // The hostname of the database you are connecting to. (Default: localhost)
   port : 3306,                  // The port number to connect to. (Default: 3306)
-  user : 'arjun',               // The MySQL user to authenticate as.
+  user : 'Akshat',               // The MySQL user to authenticate as.
   password : '',                // The password of that MySQL user.
   database : 'mysqldb',         // Name of the database to use for this connection.
 });
