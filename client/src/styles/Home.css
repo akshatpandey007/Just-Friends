@@ -1,0 +1,32 @@
+.Home{
+    height: 100% !important;
+}
+.row{
+    height: 100% !important;
+}
+.col{
+    height: 100% !important;
+}
+
+.second{
+    background-color: rgb(240, 236, 233);
+}
+
+
+.floatingActionButton{
+    position: fixed;
+    bottom : 25px;
+    right : 25px;
+    width : 60px;
+    height :  60px;
+    border-radius: 50%;
+    background-color:orangered;
+    font-size: 50px;
+    cursor: pointer;
+}
+
+.floatingActionButton > span{
+    display: inline-block;
+    color: white;
+    transform: translateX(12px) translateY(-12px);
+}

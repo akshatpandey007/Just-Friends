@@ -1,0 +1,76 @@
+GET http://localhost:4001/
+
+###
+POST http://localhost:4001/signup
+Content-Type: application/json
+
+
+{
+    "name" : "Akshat Pandey",
+    "email" : "akshat.pandey880@gmail.com",
+    "password" : "10rs"
+}
+
+###
+POST http://localhost:4001/test/addUser
+Content-Type: application/json
+
+{
+    "name" : "Akshat",
+    "email" : "akshat@gmail.com",
+    "password" : "10rs"
+}
+
+
+###
+POST http://localhost:4001/test/findByEmail
+Content-Type: application/json
+
+{
+    "email" : "akshat@gmail.com"
+}
+
+
+###
+POST http://localhost:4001/test/findById
+Content-Type: application/json
+
+{
+    "id" : 7
+}
+
+###
+GET http://localhost:4001/test/getAllUsers
+
+###
+POST http://localhost:4001/login 
+Content-Type: application/json
+ 
+
+{
+    "email" : "a@a",
+    "password" : "a"
+}
+
+###
+GET http://localhost:4001/getallusers/
+
+
+###
+GET http://localhost:4001/test/getallfriends
+Content-Type: application/json
+
+
+{
+    "email" : "a@a"
+}
+
+###
+POST http://localhost:4001/test/addfriends
+Content-Type: application/json
+
+
+{
+    "email" : "a@chu",
+    "friendId" : "20"
+}
