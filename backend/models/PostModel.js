@@ -2,13 +2,6 @@ import db from "./dbConfig";
 
 const table = process.env.DB_POSTS_TABLE
 
-// postId uid heading content likes countLikes creationDate
-
-// add Post
-// search Posts by uid
-// removePosts 
-// 
-
 class PostModel {
     constructor(postid,uid,heading,content,likes,countLikes,creationDate){
         this.postid = postid;
