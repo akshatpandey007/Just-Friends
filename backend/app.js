@@ -12,6 +12,20 @@ import signupRoute from './api/signup.js'
 import testRouter from './api/test.js'
 import allUsersRoute from './api/getallusers.js'
 
+import portfinder from 'portfinder'
+
+
+var port = process.ENV.PORT || 3000
+var portSpan = 999
+
+portfinder.getPort({
+    port,
+    stopPort : port + portSpan
+},(err,openPort)=>{
+    if(err) 
+        throw err
+    port = openPort
+});
 
 
 dotenv.config({ path : './config/config.env' })
@@ -23,7 +37,6 @@ if(process.env.ENV == 'development'){
     app.use(morgan('dev'))
 }
 
-const port = process.env.PORT || 5000
 
 app.use(express.json())
 app.use(express.urlencoded({extended : true}))
