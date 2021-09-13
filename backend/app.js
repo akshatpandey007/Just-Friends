@@ -6,10 +6,14 @@ import passport from 'passport'
 import {initialize as passportInit} from "./config/passportConfig.js"
 import sessions from 'express-session'
 
+import cluster from 'cluster'
+import os from 'os'
+import portfinder from 'portfinder'
+
+
 import loginRoute from "./api/login.js"
 import logoutRoute from "./api/logout.js"
 import signupRoute from './api/signup.js'
-import testRouter from './api/test.js'
 import allUsersRoute from './api/getallusers.js'
 
 
@@ -23,7 +27,18 @@ if(process.env.ENV == 'development'){
     app.use(morgan('dev'))
 }
 
-const port = process.env.PORT || 5000
+var port = process.env.PORT || 4001
+var portSpan = 999
+
+portfinder.getPort({
+    port,
+    stopPort : port + portSpan
+},(err,openPort)=>{
+    if(err) throw err
+    port = openPort
+})
+
+
 
 app.use(express.json())
 app.use(express.urlencoded({extended : true}))
@@ -50,10 +65,26 @@ app.use("/signup",signupRoute)
 app.use("/login",loginRoute)
 app.use("/logout",logoutRoute)
 app.use("/getallusers",allUsersRoute)
-app.use("/test", testRouter)
 
-app.listen(port,err =>{
-    if(err)
-        throw err
-    console.log(`Server is running at port ${port}`)
-})
+const cpus = os.cpus()
+
+if(cluster.isMaster){
+    console.log("Primary cluster running")
+    for(let i=0;i<cpus.length;i++){
+        cluster.fork()
+    }
+
+    cluster.on('exit',(worker,code,data)=>{
+        console.log(`worker on port ${worker.process.pid} died`)
+        cluster.fork()
+    })
+
+}else {
+    app.listen(port,err =>{
+        if(err)
+            throw err
+        console.log(`Server is running at port ${port} with process ${process.pid}`)
+    })
+}
+
+
