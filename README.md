@@ -74,8 +74,35 @@ A Social Media app with simple features built with ReactJS, NodeJS, ExpressJs an
  
   ```
   
+  Below are the results of loadtest Npm module:
+   1000 requests were made with maximum of 100 at a time and 1 result is with using and following result came
+   
+   i) Using Clustering
+  
+  ![Result with cluster](https://github.com/akshatpandey007/Just-Friends/blob/main/img/with_cluster.png)
+  
+  ii) Without Using Clustering
+  
+  ![Result without cluster](https://github.com/akshatpandey007/Just-Friends/blob/main/img/with_no_cluster.png)
   
   
+  ### Axios
+   It is a Promise based HTTP client which is used to send API requests to the server from frontEnd.
+   
+   ```javascript
+       let axiosConfig = {
+        headers: {
+            'Content-Type': 'application/json;charset=UTF-8',
+            "Access-Control-Allow-Origin": "*",
+        },
+        // allows to send cookies with the request
+        withCredentials : true
+      };
+
+      axios.get(API_URL,axiosConfig);
+   
+   ```
+   
   ### Morgan
   A Logger it is Use to watch for any API calls and logs the basic information about the API calls.
   
@@ -108,7 +135,7 @@ A Social Media app with simple features built with ReactJS, NodeJS, ExpressJs an
   queueLimit: 100,              // The maximum number of connection requests the pool will queue before returning an error from getConnection. (Default: 0)
   host : '127.0.0.1',           // The hostname of the database you are connecting to. (Default: localhost)
   port : 3306,                  // The port number to connect to. (Default: 3306)
-  user : 'arjun',               // The MySQL user to authenticate as.
+  user : 'Akshat',               // The MySQL user to authenticate as.
   password : '',                // The password of that MySQL user.
   database : 'mysqldb',         // Name of the database to use for this connection.
 });
