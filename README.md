@@ -22,7 +22,7 @@ A Social Media app with simple features built with ReactJS, NodeJS, ExpressJs an
 ![7](https://github.com/akshatpandey007/Just-Friends/blob/main/img/7.png) ![8](https://github.com/akshatpandey007/Just-Friends/blob/main/img/8.PNG) ![9](https://github.com/akshatpandey007/Just-Friends/blob/main/img/8.PNG)
 
 Database of Project
-![db](https://github.com/akshatpandey007/Just-Friends/blob/main/img/db.PNG)
+![db](https://github.com/akshatpandey007/Just-Friends/blob/main/img/db.jpg)
 
 ## Dependencies Used
 
