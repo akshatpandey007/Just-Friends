@@ -13,6 +13,17 @@ A Social Media app with simple features built with ReactJS, NodeJS, ExpressJs an
 * Users can see Post of Others
 * Users can logOut of the system
 
+## Screenshots of Project
+
+![1](https://github.com/akshatpandey007/Just-Friends/blob/main/img/1.png) ![2](https://github.com/akshatpandey007/Just-Friends/blob/main/img/2.png) ![3](https://github.com/akshatpandey007/Just-Friends/blob/main/img/3.png)
+
+![4](https://github.com/akshatpandey007/Just-Friends/blob/main/img/4.png) ![5](https://github.com/akshatpandey007/Just-Friends/blob/main/img/5.png) ![6](https://github.com/akshatpandey007/Just-Friends/blob/main/img/6.png)
+
+![7](https://github.com/akshatpandey007/Just-Friends/blob/main/img/7.png) ![8](https://github.com/akshatpandey007/Just-Friends/blob/main/img/8.png) ![9](https://github.com/akshatpandey007/Just-Friends/blob/main/img/9.png)
+
+Database of Project
+![db](https://github.com/akshatpandey007/Just-Friends/blob/main/img/db.png)
+
 ## Dependencies Used
 
 ### Nodemon
@@ -75,7 +86,7 @@ A Social Media app with simple features built with ReactJS, NodeJS, ExpressJs an
   ```
   
   Below are the results of loadtest Npm module:
-   1000 requests were made with maximum of 100 at a time and 1 result is with using and following result came
+   1000 requests were made with maximum of 100 at a time and first result is with clustering and another without using clusters and following result came
    
    i) Using Clustering
   
@@ -110,6 +121,9 @@ A Social Media app with simple features built with ReactJS, NodeJS, ExpressJs an
     import morgan from 'morgan'
     app.use(morgan('dev'))
   ```
+  
+  Morgan logs
+  ![logs](https://github.com/akshatpandey007/Just-Friends/blob/main/img/morgan.png)
   
  ### bcrypt 
  Bcrypt is use to encypt string with given strength. It is generally used to encrypt Password. 
